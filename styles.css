@@ -1,0 +1,157 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('your-background-image.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Top Bar */
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    z-index: 1000;
+    background: transparent; /* Removed the black background */
+}
+
+/* Left container for Hamburger and Logo */
+.left-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Hamburger Icon */
+.hamburger {
+    font-size: 30px;
+    cursor: pointer;
+    color: wheat;
+    transition: transform 0.3s ease;
+    margin-right: 15px; /* Spacing between ☰ and Logo */
+}
+
+.hamburger.open {
+    transform: rotate(90deg);
+    color: #ff4757;
+}
+
+/* Logo Styles */
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+    color: whitesmoke;
+}
+
+/* Sidebar Menu */
+#sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background: rgba(6, 4, 4, 0.32);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.9px);
+   -webkit-backdrop-filter: blur(3.9px);
+    border: 1px solid rgba(6, 4, 4, 0.61);
+    padding-top: 60px;
+    transition: left 0.4s ease;
+}
+
+#sidebar.active {
+    left: 0;
+}
+
+/* Navigation Links */
+#sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+#sidebar ul li {
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#sidebar ul li a:hover {
+    color: #ff4757;
+    transform: translateX(10px);
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100vh;
+    color: white;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), url('./images/pic4.jpg') center/cover no-repeat;
+    width: 100%;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: white;
+    background: #ff4757;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #e63946;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    #sidebar {
+        width: 200px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+}
