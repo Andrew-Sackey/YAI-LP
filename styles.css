@@ -1,115 +1,22 @@
-body {
-    font-family: 'Arial', sans-serif;
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
-    background: url('your-background-image.jpg') no-repeat center center/cover;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* Top Bar */
-.top-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 15px 20px;
-    z-index: 1000;
-    background: transparent; /* Removed the black background */
-}
-
-/* Left container for Hamburger and Logo */
-.left-container {
-    display: flex;
-    align-items: center;
-}
-
-/* Hamburger Icon */
-.hamburger {
-    font-size: 30px;
-    cursor: pointer;
-    color: wheat;
-    transition: transform 0.3s ease;
-    margin-right: 15px; /* Spacing between ☰ and Logo */
-}
-
-.hamburger.open {
-    transform: rotate(90deg);
-    color: #ff4757;
-}
-
-/* Logo Styles */
-.logo {
-    font-size: 30px;
-    font-weight: bold;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    margin-left: 5px;
-    cursor: pointer;
-    transition: color 0.3s ease, transform 0.3s ease;
-    color: whitesmoke;
-}
-
-/* Sidebar Menu */
-#sidebar {
-    position: fixed;
-    left: -250px;
-    top: 0;
-    width: 250px;
-    height: 100%;
-    background: rgba(6, 4, 4, 0.32);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(3.9px);
-   -webkit-backdrop-filter: blur(3.9px);
-    border: 1px solid rgba(6, 4, 4, 0.61);
-    padding-top: 60px;
-    transition: left 0.4s ease;
-}
-
-#sidebar.active {
-    left: 0;
-}
-
-/* Navigation Links */
-#sidebar ul {
-    list-style: none;
-    padding: 0;
-}
-
-#sidebar ul li {
-    padding: 15px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-#sidebar ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    display: block;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-#sidebar ul li a:hover {
-    color: #ff4757;
-    transform: translateX(10px);
-}
-
-/* Hero Section */
+/* Full-Screen Hero Section */
 .hero {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    height: 100vh;
+    height: 100vh; /* Ensures hero section takes full viewport height */
+    width: 100%;
     color: white;
     background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), url('./images/pic4.jpg') center/cover no-repeat;
-    width: 100%;
 }
 
 .hero-content {
@@ -141,17 +48,201 @@ body {
     background: #e63946;
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
-    #sidebar {
-        width: 200px;
+/* Navbar */
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    z-index: 1000;
+    background: transparent; /* Keeps navbar background clear */
+}
+
+/* Left container for Hamburger and Logo */
+.left-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Hamburger Icon */
+.hamburger {
+    font-size: 30px;
+    cursor: pointer;
+    color: wheat;
+    transition: transform 0.3s ease;
+    margin-right: 15px; /* Spacing between ☰ and Logo */
+}
+
+.hamburger.open {
+    transform: rotate(90deg);
+    color: #ff4757;
+}
+
+/* Logo */
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+    color: whitesmoke;
+}
+
+/* Sidebar */
+#sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background: rgba(6, 4, 4, 0.32);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.9px);
+    -webkit-backdrop-filter: blur(3.9px);
+    border: 1px solid rgba(6, 4, 4, 0.61);
+    padding-top: 60px;
+    transition: left 0.4s ease;
+}
+
+#sidebar.active {
+    left: 0;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+#sidebar ul li {
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#sidebar ul li a:hover {
+    color: #ff4757;
+    transform: translateX(10px);
+}
+
+/* Who We Are Section */
+.about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 10%;
+    background: url('./images/pic12.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+}
+
+/* Content Wrapper */
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Text Section */
+.about-text {
+    max-width: 500px;
+    color: white;
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: fadeIn 1.5s forwards ease-in-out;
+}
+
+.about-text h2 {
+    font-size: 4rem;
+    color: #92572E;
+    font-style:oblique;
+    font-family:sans-serif;
+    margin-bottom: 90px;
+    font-weight: bold;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    font-weight: 300;
+    min-height: 80px; /* To prevent layout shift when typewriting starts */
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1.2em;
+    color: white;
+    background: #b22222; /* Deep red */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background: #9b111e;
+}
+
+/* Image Section */
+.about-image img {
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateX(100px);
+    animation: fadeIn 1.5s forwards ease-in-out 0.5s;
+}
+
+/* Typewriter Animation */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
     }
 
-    .hero h1 {
-        font-size: 2em;
+    .about-text {
+        max-width: 100%;
     }
 
-    .hero p {
-        font-size: 1em;
+    .about-image img {
+        max-width: 100%;
     }
 }
