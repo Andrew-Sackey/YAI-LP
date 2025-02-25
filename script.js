@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", function () {
     const textElement = document.getElementById("typewriter");
-    const text = "At Mersakyi Enterprise, we transform surplus tomatoes into fine wine, reducing food waste and supporting farmers. Our innovative approach enhances sustainability while offering a premium, unique beverage experience.";
+    const text = "At Mersakyi Enterprise, we transform surplus tomatoes into fine wine, reducing food waste and supporting farmers. Our innovative approach enhances sustainability while offering a premium, unique beverage experience. Our main aim is to support local farmers, create luxurious and tasty wine from an everyday ingredient and impact the environment positively to improve sustainability and growth.";
     let index = 0;
 
     function type() {
@@ -42,4 +42,97 @@ document.addEventListener("DOMContentLoaded", function () {
 
     type();
 });
+
+// Scroll animation effect
+document.addEventListener("DOMContentLoaded", () => {
+    const steps = document.querySelectorAll(".process-step");
+
+    function revealOnScroll() {
+        steps.forEach(step => {
+            const position = step.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            
+            if (position < windowHeight - 100) {
+                step.classList.add("reveal");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll(); // Initial check in case some elements are already visible
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const textElements = document.querySelectorAll(".fade-in, .slide-in");
+  
+    textElements.forEach((el, index) => {
+      setTimeout(() => {
+        el.style.opacity = "1";
+        el.style.transform = "translateY(0)";
+      }, 300 * index);
+    });
+  });
+
+  
+  // Fade-in animation for cards when scrolling
+document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll(".card");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+            }
+        });
+    }, { threshold: 0.3 });
+
+    cards.forEach(card => {
+        observer.observe(card);
+    });
+});
+
+
+document.querySelectorAll('.cart-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        alert('Paystack Payment Integration Coming Soon!');
+    });
+});
+
+
+
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let message = document.getElementById("message").value.trim();
+
+    if (name === "" || email === "" || message === "") {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    if (!validateEmail(email)) {
+        alert("Please enter a valid email.");
+        return;
+    }
+
+    alert("Message sent successfully!");
+    this.reset(); // Reset form fields
+});
+
+// Email validation function
+function validateEmail(email) {
+    let re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    return re.test(email);
+}
+
+
+// Automatically update copyright year
+document.getElementById("year").textContent = new Date().getFullYear();
+
+
+
 
