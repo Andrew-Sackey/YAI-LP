@@ -167,7 +167,7 @@
 
 .about-text h2 {
     font-size: 4rem;
-    color: #96805D;
+    color: white;
     font-style:oblique;
     font-family:Georgia, 'Times New Roman', Times, serif;
     margin-bottom: 90px;
@@ -729,11 +729,18 @@ html {
 }
 
 
-  
-
 
 /* Responsive */
+/* 📱 Mobile (max-width: 768px) */
 @media (max-width: 768px) {
+    #hero h1 {
+        font-size: 2.2em;
+    }
+
+    #hero p {
+        font-size: 1.2em;
+    }
+
     .about-content {
         flex-direction: column;
         text-align: center;
@@ -744,6 +751,55 @@ html {
     }
 
     .about-image img {
-        max-width: 100%;
+        width: 90%;
+    }
+
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .innovator-image img {
+        width: 80%;
+        height: auto;
+    }
+
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .wine-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
+
+/* 📱 Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    #hero h1 {
+        font-size: 1.8em;
+    }
+
+    #hero p {
+        font-size: 1em;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 1em;
+    }
+
+    .about-text h2 {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+    }
+
+    .cards-container {
+        gap: 20px;
+    }
+
+    .wine-container {
+        grid-template-columns: 1fr;
+    }
+}
+
