@@ -1,9 +1,31 @@
-function toggleMenu() {
-    const sidebar = document.getElementById("sidebar");
-    const hamburger = document.querySelector(".hamburger");
-    sidebar.classList.toggle("active");
-    hamburger.classList.toggle("open");
+// Slideshow Effect
+let slideIndex = 0;
+const slides = document.querySelectorAll(".slide");
+
+function showSlides() {
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.opacity = "0";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
+    }
+    slides[slideIndex - 1].style.opacity = "1";
+    setTimeout(showSlides, 5000);
 }
+
+showSlides();
+
+// Hamburger Menu Toggle
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+
+hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
     function toggleMenu() {
@@ -12,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         sidebar.classList.toggle("active");
         hamburger.classList.toggle("open");
     }
+    
 
     // Scroll animation for "Who We Are" section
     const aboutSection = document.querySelector(".about-section");

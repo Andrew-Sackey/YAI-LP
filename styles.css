@@ -1,4 +1,4 @@
-/* General Reset */
+/* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -6,147 +6,189 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* Full-Screen Hero Section */
-#hero {
+body {
+    background-color: #111;
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    height: 100vh; /* Ensures hero section takes full viewport height */
-    width: 100%;
     color: white;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), url('./images/pic4.jpg') center/cover no-repeat;
+    font-size: 22px;
+    font-weight: bold;
 }
 
+.logo img {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: rgb(139, 24, 24);
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Hero Section */
+#hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Slideshow */
+.slideshow {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Dark overlay effect */
+.slideshow::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(12, 12, 12, 0.4); /* Adjust opacity as needed */
+    z-index: 1;
+}
+
+/* Ensure slides appear under overlay */
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    z-index: 0; /* Keeps images behind overlay */
+}
+
+.slide:first-child {
+    opacity: 1;
+}
+
+/* Hero Content */
 .hero-content {
-    max-width: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    padding: 20px 40px;
+    border-radius: 8px;
+    z-index: 2; /* Ensures text is above overlay */
 }
 
-#hero h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
+
+
+.hero-content h1 {
+    font-size: 50px;
+    font-weight: bold;
 }
 
-#hero p {
-    font-size: 1.6em;
-    margin-bottom: 20px;
+.hero-content p {
+    font-size: 25px;
+    font-style: italic;
+    margin: 10px 0;
+    margin-top: 40px;
+    color: whitesmoke;
 }
 
 .btn {
     display: inline-block;
-    padding: 10px 20px;
-    font-size: 1.2em;
+    padding: 12px 24px;
+    font-size: 18px;
     color: white;
-    background: #ff4757;
+    background: #d4af37;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s ease;
+    border-radius: 6px;
+    transition: background 0.3s;
 }
 
 .btn:hover {
-    background: #e63946;
+    background: #b8860b;
 }
 
-/* Fixed Navbar */
-.top-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60px; /* Adjust height as needed */
-    display: flex;
-    align-items: center;
-    padding: 15px 20px;
-    z-index: 1000;
-    background: rgba(13, 13, 13, 0.8); /* Dark semi-transparent background */
-    backdrop-filter: blur(5px); /* Blur effect */
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: black;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hero-content {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+    }
 }
 
-/* Ensure Sections Don't Go Under the Navbar */
-section {
-    padding-top: 80px; /* Adjust this based on the height of .top-bar */
-}
 
-html {
-    scroll-behavior: smooth;
-}
-
-
-/* Left container for Hamburger and Logo */
-.left-container {
-    display: flex;
-    align-items: center;
-}
-
-/* Hamburger Icon */
-.hamburger {
-    font-size: 30px;
-    cursor: pointer;
-    color: wheat;
-    transition: transform 0.3s ease;
-    margin-right: 15px; /* Spacing between ☰ and Logo */
-}
-
-.hamburger.open {
-    transform: rotate(90deg);
-    color: #ff4757;
-}
-
-/* Logo */
-.logo {
-    font-size: 30px;
-    font-weight: bold;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    margin-left: 5px;
-    cursor: pointer;
-    transition: color 0.3s ease, transform 0.3s ease;
-    color: whitesmoke;
-}
-
-/* Sidebar */
-#sidebar {
-    position: fixed;
-    left: -250px;
-    top: 0;
-    width: 250px;
-    height: 100%;
-    background: rgba(6, 4, 4, 0.32);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(3.9px);
-    -webkit-backdrop-filter: blur(3.9px);
-    border: 1px solid rgba(6, 4, 4, 0.61);
-    padding-top: 60px;
-    transition: left 0.4s ease;
-}
-
-#sidebar.active {
-    left: 0;
-}
-
-#sidebar ul {
-    list-style: none;
-    padding: 0;
-}
-
-#sidebar ul li {
-    padding: 15px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-#sidebar ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    display: block;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-#sidebar ul li a:hover {
-    color: #ff4757;
-    transform: translateX(10px);
-}
 
 /* Who We Are Section */
 #about-section {
