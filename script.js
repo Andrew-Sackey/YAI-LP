@@ -117,11 +117,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-document.querySelectorAll('.cart-btn').forEach(button => {
-    button.addEventListener('click', () => {
-        alert('Paystack Payment Integration Coming Soon!');
-    });
-});
+// document.querySelectorAll('.cart-btn').forEach(button => {
+//     button.addEventListener('click', () => {
+//         alert('Paystack Payment Integration Coming Soon!');
+//     });
+// });
 
 
 
