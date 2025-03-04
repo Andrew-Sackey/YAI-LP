@@ -16,13 +16,22 @@ function showSlides() {
 
 showSlides();
 
-// Hamburger Menu Toggle
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
+const navItems = document.querySelectorAll(".nav-links a"); // Select all nav links
 
+// Toggle menu on hamburger click
 hamburger.addEventListener("click", () => {
     navLinks.classList.toggle("active");
 });
+
+// Close menu when a nav link is clicked
+navItems.forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active"); // Remove the active class
+    });
+});
+
 
 
 

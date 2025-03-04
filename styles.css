@@ -33,6 +33,11 @@ body {
     font-weight: bold;
 }
 
+.logo a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
 .logo img {
     width: 35px;
     height: 35px;
