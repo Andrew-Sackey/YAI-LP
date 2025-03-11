@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", function () {
     const textElement = document.getElementById("typewriter");
-    const text = "At Mersakyi Enterprise, we transform surplus tomatoes into fine wine, reducing food waste and supporting farmers. Our innovative approach enhances sustainability while offering a premium, unique beverage experience. Our main aim is to support local farmers, create luxurious and tasty wine from an everyday ingredient and impact the environment positively to improve sustainability and growth.";
+    const text = "At Mersakyi Enterprise, we transform surplus fruits and tomatoes into fine wine, reducing food waste and supporting farmers. Our innovative approach enhances sustainability while offering a premium, unique wine experience. Our main aim is to support local farmers, create luxurious and tasty wine from fruits and impact the environment positively to improve sustainability and growth.";
     let index = 0;
 
     function type() {
